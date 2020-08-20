@@ -1,0 +1,5 @@
+00001_cmd='echo "hello world"'
+00001_callback='curl http://klevr.dev/91hokjsj0afn2kjsjlaiuk2?$'
+00002_cmd='touch /tmp/test.file'
+00002_callback='curl http://klevr.dev/91hokjsj0afn2kjsjlaiuk2?$'
+
