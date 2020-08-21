@@ -1,2 +1,2 @@
-kubectl apply -f /data/klevry/mysql.yaml
-kubectl get pod -A
+mkdir -p test/test.txt
+echo "test" >> test/test.txt
