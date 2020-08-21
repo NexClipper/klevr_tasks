@@ -1,2 +1,2 @@
-00001_cmd='echo "hello world"'
-00002_cmd='touch /tmp/test.file'
+kubectl apply -f test.yaml
+kubectl get pod -A
