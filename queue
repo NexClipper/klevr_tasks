@@ -2,7 +2,7 @@ mkdir -p test/test.txt
 echo "test" >> test/test.txt
 ############P8s Oper TEST - 
 #git clone https://github.com/NexClipper/kube-prometheus.git /data/klevry/kube-prometheus
-#cd /data/klevry/kube-prometheus
-#kubectl create -f manifests/setup
-#kubectl create -f manifests/
+############cd /data/klevry/kube-prometheus
+#kubectl create -f /data/klevry/kube-prometheus/manifests/setup
+#kubectl create -f /data/klevry/kube-prometheus/manifests/
 ############P8s Oper TEST -
