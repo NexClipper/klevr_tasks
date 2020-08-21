@@ -1,2 +1,2 @@
-kubectl apply -f test.yaml
+kubectl apply -f /data/klevry/mysql.yaml
 kubectl get pod -A
