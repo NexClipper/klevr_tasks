@@ -1,2 +1,3 @@
-mkdir -p test
-echo "test" >> test/test
+git clone https://github.com/NexClipper/kube-prometheus.git /data/klevry/kube-prometheus
+kubectl apply -f /data/klevry/kube-prometheus/manifests/setup
+kubectl apply -f /data/klevry/kube-prometheus/manifests/
