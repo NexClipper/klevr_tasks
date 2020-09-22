@@ -1,4 +1,5 @@
-git clone https://github.com/NexClipper/kube-prometheus.git /data/klevry/kube-prometheus
-kubectl apply -f /data/klevry/kube-prometheus/manifests/setup
-kubectl apply -f /data/klevry/kube-prometheus/manifests/
+git clone https://github.com/NexClipper/kube-prometheus_test.git /data/klevry/kube-prometheus
+kubectl apply -f /data/klevry/kube-prometheus/setup
+bash /data/klevry/kube-prometheus/chktest.sh
+kubectl apply -f /data/klevry/kube-prometheus/
 busybee nodesearch grafana > /tmp/grafana
