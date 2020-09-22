@@ -2,4 +2,5 @@ git clone https://github.com/NexClipper/kube-prometheus_test.git /data/klevry/ku
 kubectl apply -f /data/klevry/kube-prometheus/setup
 bash /data/klevry/kube-prometheus/chktest.sh
 kubectl apply -f /data/klevry/kube-prometheus/
+bash /data/klevry/kube-prometheus/chktest.sh
 busybee nodesearch grafana > /tmp/grafana
