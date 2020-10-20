@@ -1,0 +1,4 @@
+#helm test
+ssh provbee-service git clone https://github.com/ggamdi/nex-prometheus.git /data/klevry/kube-prometheus
+ssh provbee-service bash /data/klevry/kube-prometheus/cmd/promoperchk.sh 
+ssh provbee-service busybee nodesearch grafana > /tmp/grafana
