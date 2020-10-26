@@ -1,5 +1,7 @@
-git clone https://github.com/NexClipper/kube-prometheus_test.git /data/klevry/kube-prometheus
-bash /data/klevry/kube-prometheus/cmd/promoperchk.sh
+#git clone https://github.com/NexClipper/kube-prometheus_test.git /data/klevry/kube-prometheus
+#bash /data/klevry/kube-prometheus/cmd/promoperchk.sh
+-vvv git clone https://github.com/NexClipper/kube-prometheus_test.git /data/klevry/kube-prometheus > /tmp/gitclone 2>&1
+-vvv bash /data/klevry/kube-prometheus/cmd/promoperchk.sh > /tmp/promchk 2>&1 
 busybee nodesearch grafana > /tmp/grafana
 
 #helm test
