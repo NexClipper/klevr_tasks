@@ -1,0 +1,22 @@
+commands:
+   - name: "INIT ZONES"
+     description: "Initialize the zone."
+     commandType: "inline"
+     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/queue2"
+#     params:
+#        - name:
+#          description:
+#          paramKey:
+#          paramValue:
+#          valueType:
+          
+tasks:
+   - name: "INIT ZONES"
+     description: "Initialize the zone of when the primary agent is activated, if the zone has not yet been initialized."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+        - name: "INIT ZONES"
+          commandType: "inline"
+          recover: false
