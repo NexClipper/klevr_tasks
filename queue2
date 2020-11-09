@@ -9,6 +9,6 @@ provbeetmp="NexClipper.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | sed
 #ssh provbee-service tobs install -n nc --namespace tobsprovbee -f /tmp/$provbeetmp
 ssh provbee-service "echo $ZZZ > /tmp/$provbeetmp"
 ssh provbee-service busybee tobs install tobs-test #$provbeetmp-TEST
-ssh provbee-service kubectl patch service -n tobsprovbee nc-grafana -p '{\"spec\":{\"type\":\"NodePort\"}}'
+ssh provbee-service kubectl patch service -n tobs-test nc-grafana -p '{\"spec\":{\"type\":\"NodePort\"}}'
 ssh provbee-service busybee nodesearch nc-grafana > /tmp/grafana
 ssh provbee-service busybee nodesearch nc-grafana > /tmp/grafana_$provbeetmp
