@@ -1,0 +1,25 @@
+### SAMPLE JSON
+{
+  "provbee_svc": "provbee-service",
+  "default_namespace": "nexclipper",
+  "tobs_yaml": "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+}
+
+JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
+####################################################################
+PROVBSSH=JSON_TASK_PARAMS.provbee_svc
+PROVNS=JSON_TASK_PARAMS.default_namespace
+TOBSYAML=JSON_TASK_PARAMS.tobs_yaml
+
+
+
+#helm test
+provbeetmp="NexClipper.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | sed 1q)"
+ssh $PROVBSSH "echo $TOBSYAML > /tmp/$provbeetmp"
+ssh $PROVBSSH busybee tobs install $PROVNS #$provbeetmp-TEST
+ssh $PROVBSSH kubectl patch service -n $PROVNS nc-grafana -p '{\"spec\":{\"type\":\"NodePort\"}}'
+ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana
+######TEST INFO
+grafanainfo=`ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana_$provbeetmp`
+echo $grafanainfo
+JSON_PRE_STEP_RESULT="TEST STEP"
