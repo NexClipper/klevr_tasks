@@ -5,7 +5,7 @@ provbeetmp="NexClipper.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | sed
 #helm test
 #ssh provbee-service git clone https://github.com/ggamdi/nex-prometheus.git /data/klevry/kube-prometheus
 #ssh provbee-service bash /data/klevry/kube-prometheus/cmd/promoperchk.sh 
-ssh provbee-service "$ZZZ > /tmp/$provbeetmp"
+ssh provbee-service "echo $ZZZ > /tmp/$provbeetmp"
 ssh provbee-service tobs install -n nc --namespace tobsprovbee
 #ssh provbee-service tobs install -n nc --namespace tobsprovbee -f /tmp/$provbeetmp
 ssh provbee-service kubectl patch service -n tobsprovbee nc-grafana -p '{\"spec\":{\"type\":\"NodePort\"}}'
