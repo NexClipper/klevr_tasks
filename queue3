@@ -7,9 +7,9 @@
 
 JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
 ####################################################################
-PROVBSSH=JSON_TASK_PARAMS.provbee_svc
-PROVNS=JSON_TASK_PARAMS.default_namespace
-TOBSYAML=JSON_TASK_PARAMS.tobs_yaml
+PROVBSSH=$(echo ${JSON_TASK_PARAMS} | jq -r '.provbee_host')
+PROVNS=$(echo ${JSON_TASK_PARAMS} | jq -r '.default_namespace')
+TOBSYAML=$(echo ${JSON_TASK_PARAMS} | jq -r '.tobs_yaml')
 
 
 
@@ -21,5 +21,4 @@ ssh $PROVBSSH kubectl patch service -n $PROVNS nc-grafana -p '{\"spec\":{\"type\
 ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana
 ######TEST INFO
 grafanainfo=`ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana_$provbeetmp`
-echo $grafanainfo
-JSON_PRE_STEP_RESULT="TEST STEP"
+TASK_RESULT=$(echo "{}" | jq '. += {"GR_URL": "'"$grafanainfo"'"}')
