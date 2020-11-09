@@ -21,4 +21,4 @@ ssh $PROVBSSH kubectl patch service -n $PROVNS nc-grafana -p '{\"spec\":{\"type\
 ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana
 ######TEST INFO
 grafanainfo=`ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana_$provbeetmp`
-TASK_RESULT=$(echo "{}" | jq '. += {"GR_URL": "'"$grafanainfo"'"}')
+TASK_RESULT=$(echo "{}" | jq '. += {"GRAFANA_URL": "'"$grafanainfo"'"}')
