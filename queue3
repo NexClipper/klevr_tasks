@@ -7,7 +7,7 @@
 
 JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
 ####################################################################
-PROVBSSH=$(echo ${JSON_TASK_PARAMS} | jq -r '.provbee_host')
+PROVBSSH=$(echo ${JSON_TASK_PARAMS} | jq -r '.provbee_svc')
 PROVNS=$(echo ${JSON_TASK_PARAMS} | jq -r '.default_namespace')
 TOBSYAML=$(echo ${JSON_TASK_PARAMS} | jq -r '.tobs_yaml')
 
