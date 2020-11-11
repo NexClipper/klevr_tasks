@@ -18,7 +18,7 @@ provbeetmp="NexClipper.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | sed
 ssh $PROVBSSH "echo $TOBSYAML > /tmp/$provbeetmp"
 ssh $PROVBSSH busybee tobs install $PROVNS #$provbeetmp-TEST
 ssh $PROVBSSH kubectl patch service -n $PROVNS nc-grafana -p '{\"spec\":{\"type\":\"NodePort\"}}'
-ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana
+#ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana
 ######TEST INFO
-grafanainfo=`ssh $PROVBSSH busybee nodesearch nc-grafana > /tmp/grafana_$provbeetmp`
+grafanainfo=`ssh $PROVBSSH busybee nodesearch nc-grafana`
 TASK_RESULT=$(echo "{}" | jq '. += {"GRAFANA_URL": "'"$grafanainfo"'"}')
