@@ -1,0 +1,11 @@
+#INPUT
+{
+  "p8s_namespace": ""
+}
+
+
+
+#OUTPUT
+{
+  "P8S_CONFIG_YAML": ""
+}
