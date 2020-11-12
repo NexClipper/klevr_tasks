@@ -1,0 +1,13 @@
+#INPUT
+{
+  "p8s_namespace" : "",
+  "p8s_config_yaml" : "YAML contents"
+}
+
+YAML=`curl ~` 
+YAML.replace('"', '"/gi')
+#OUTPUT
+{
+  "p8s_config_apply_result" : ""
+  "p8s_config_yaml" : "현재 YAML contents"
+}
