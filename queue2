@@ -12,3 +12,4 @@ ssh provbee-service busybee tobs install tobs-test #$provbeetmp-TEST
 ssh provbee-service kubectl patch service -n tobs-test nc-grafana -p '{\"spec\":{\"type\":\"NodePort\"}}'
 ssh provbee-service busybee nodesearch nc-grafana > /tmp/grafana
 ssh provbee-service busybee nodesearch nc-grafana > /tmp/grafana_$provbeetmp
+TASK_RESULT=jfijiejiwjo
