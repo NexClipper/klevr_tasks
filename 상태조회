@@ -1,0 +1,23 @@
+### SAMPLE JSON
+{}
+
+JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
+####################################################################
+
+
+
+# 상태 조회 CLI 순차 실행해서 결과 TASK_RESULT로 취합
+#/api/v1/query?query=sum(kube_node_spec_unschedulable)
+#http://localhost:9090/api/v1/query?query=count(kube_namespace_created)
+
+
+
+TASK_RESULT=$(echo "{}" | jq '. += {"GRAFANA_URL": "'"$grafanainfo"'"}')
+
+#OUTPUT SAMPLE
+{
+  "cluster_age": "435535.0690000057",
+  "cluster_status": 1,
+  "cluster_memory_use" : "58.27730167750072",
+  ....
+}
