@@ -11,7 +11,7 @@ PROVNS=$(echo ${JSON_TASK_PARAMS} | jq -r '.p8s_namespace')
 TOBSYAML=$(echo ${JSON_TASK_PARAMS} | jq '.tobs_yaml')
 GRAFANA_PW=$(echo ${JSON_TASK_PARAMS} | jq -r '.grafana_credential')
 
-
+echo ${TASK_ORIGIN_PARAM} | jq > /tmp/task.ori.json
 
 #helm test
 provbeetmp="NexClipper.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | sed 1q)"
