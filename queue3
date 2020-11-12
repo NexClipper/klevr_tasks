@@ -1,15 +1,15 @@
 ### SAMPLE JSON
 {
-  "provbee_svc": "provbee-service",
-  "default_namespace": "nexclipper",
+  "p8s_namespace": "nexclipper",
+  "grafana_credential": "abc1234",
   "tobs_yaml": "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 }
 
 JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
 ####################################################################
-PROVBSSH=$(echo ${JSON_TASK_PARAMS} | jq -r '.provbee_svc')
-PROVNS=$(echo ${JSON_TASK_PARAMS} | jq -r '.default_namespace')
+PROVNS=$(echo ${JSON_TASK_PARAMS} | jq -r '.p8s_namespace')
 TOBSYAML=$(echo ${JSON_TASK_PARAMS} | jq -r '.tobs_yaml')
+GRAFANA_PW=$(echo ${JSON_TASK_PARAMS} | jq -r '.grafana_credential')
 
 
 
