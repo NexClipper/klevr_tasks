@@ -1,1 +1,11 @@
 
+# INPUT
+{
+  "p8s_namespace" : ""
+}  
+
+
+# OUTPUT
+{
+  "GRAFANA_URL" : "ip:port"
+}
