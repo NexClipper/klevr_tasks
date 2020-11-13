@@ -6,7 +6,7 @@ commands:
    - name: "INSTALL P8S"
      description: "Install P8S on the zone."
      commandType: "inline"
-     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/queue3"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_k8s_status.sh"
      params:
        - name: "Provbee HOST"
          paramKey: "provbee_svc"
