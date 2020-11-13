@@ -27,7 +27,7 @@ commands:
    - name: "GET P8S STATUS"
      description: "It monitors P8S to get status information."
      commandType: "inline"
-     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/zzz"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_k8s_status.sh"
    - name: "GET P8S CONFIGURATION"
      description: "Get configuration yaml contents for Prometheus."
      commandType: "inline"
