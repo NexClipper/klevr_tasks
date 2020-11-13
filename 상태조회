@@ -10,14 +10,31 @@ JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
 #/api/v1/query?query=sum(kube_node_spec_unschedulable)
 #http://localhost:9090/api/v1/query?query=count(kube_namespace_created)
 
-
-
-TASK_RESULT=$(echo "{}" | jq '. += {"GRAFANA_URL": "'"$grafanainfo"'"}')
+====================================================================>>>
+PROVNS=$(echo ${JSON_TASK_PARAMS} | jq -r '.p8s_namespace')
+k8s_status=`ssh provbee-service busybee k8s wow $PROVNS` 
+TASK_RESULT=$(echo ${k8s_status})
+====================================================================>>>
 
 #OUTPUT SAMPLE
 {
-  "cluster_age": "435535.0690000057",
-  "cluster_status": 1,
-  "cluster_memory_use" : "58.27730167750072",
-  ....
+  "k8sapi": "provbee-test",
+  "data": {
+    "lookup": [
+      {
+        "name": "cluster_age",
+        "type": "string",
+        "values": "24119.765000104904"
+      },
+      {
+        "name": "cluster_status",
+        "type": "string",
+        "values": "1"
+      },
+      {
+        "name": "cluster_memory_use",
+        "type": "string",
+        "values": "N/A"
+      },
+      ................블라블라.
 }
