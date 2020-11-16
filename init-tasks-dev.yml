@@ -140,4 +140,12 @@ tasks:
        - name: "GRAFANA SERVICE NODE PORT EXPOSE"
          commandType: "inline"
          recover: false         
-      
+   - name: "FORCE SHUTDOWN AGENT"
+     description: "Ignore the ongoing task and stop the agent immediately."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangealbe: false
+     commands:
+       - name: "FORCE SHUTDOWN AGENT"
+         commandType: "reserved"
+         recover: false
