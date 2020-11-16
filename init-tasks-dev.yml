@@ -31,7 +31,7 @@ commands:
    - name: "GET P8S CONFIGURATION"
      description: "Get configuration yaml contents for Prometheus."
      commandType: "inline"
-     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/zzz"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_config_get.sh"
    - name: "UPDATE P8S CONFIGURATION"
      description: "Update configuration yaml contents for Prometheus."
      commandType: "inline"
