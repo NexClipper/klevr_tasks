@@ -10,6 +10,6 @@ ssh provbee-service "echo $TOBSYAML > /tmp/$provbeetmp.base64"
 ssh provbee-service busybee tobs install $PROVNS $provbeetmp
 #ssh provbee-service kubectl patch service -n $PROVNS nc-grafana -p '{\"spec\":{\"type\":\"NodePort\"}}'
 ######TEST INFO
-grafanapw=`ssh provbee-service busybee tobs passwd $PROVNS grafana $GRAFANA_PW`
+grafanapw=`ssh provbee-service busybee tobs passwd $PROVNS $GRAFANA_PW`
 grafanainfo=`ssh provbee-service busybee nodesearch nc-grafana`
 TASK_RESULT=$(echo "{}" | jq '. += {"GRAFANA_URL": "'"$grafanainfo"'", "GRAFANA_PW_CHANGE": "'"$grafanapw"'"}')
