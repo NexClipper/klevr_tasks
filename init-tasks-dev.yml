@@ -92,7 +92,7 @@ tasks:
      taskType: "iteration"
      taskTypeChangeable: true
      commands:
-       - name: "GET P8S STATUS"
+       - name: "GET K8S STATUS"
          commandType: "inline"
          recover: false
    - name: "GET P8S CONFIGURATION"
