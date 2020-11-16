@@ -47,7 +47,7 @@ commands:
    - name: "GRAFANA SERVICE NODE PORT EXPOSE"
      description: "Expose grafana service by node port"
      commandType: "inline"
-     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/zzz"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_expose.sh"
    - name: "STOP TASK"
      description: "Stop other running task using targetTaskID as parameter.\nEven if the request to stop a running task is successful, the task may be completed before stopping."
      commandType: "reserved"
