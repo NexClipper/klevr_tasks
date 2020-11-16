@@ -39,7 +39,7 @@ commands:
    - name: "GET ALERT MANAGER CONFIGURATION"
      description: "Get configuration yaml contents for AlertManager."
      commandType: "inline"
-     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/zzz"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_alt_config_get.sh"
    - name: "UPDATE ALERT MANAGER CONFIGURATION"
      description: "Update configuration yaml contents for AlertManager."
      commandType: "inline"
