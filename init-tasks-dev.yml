@@ -144,7 +144,7 @@ tasks:
      description: "Ignore the ongoing task and stop the agent immediately."
      parameter: "{}"
      taskType: "atOnce"
-     taskTypeChangealbe: false
+     taskTypeChangeable: false
      commands:
        - name: "FORCE SHUTDOWN AGENT"
          commandType: "reserved"
