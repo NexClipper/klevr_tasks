@@ -43,7 +43,7 @@ commands:
    - name: "UPDATE ALERT MANAGER CONFIGURATION"
      description: "Update configuration yaml contents for AlertManager."
      commandType: "inline"
-     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/zzz"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_alt_config_apply.sh"
    - name: "GRAFANA SERVICE NODE PORT EXPOSE"
      description: "Expose grafana service by node port"
      commandType: "inline"
