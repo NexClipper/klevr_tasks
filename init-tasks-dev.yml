@@ -32,6 +32,10 @@ commands:
      description: "Get configuration yaml contents for Prometheus."
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_config_get.sh"
+   - name: "TEST P8S CONFIGURATION"
+     description: "Test configuration yaml contents for Prometheus."
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_config_test.sh"
    - name: "UPDATE P8S CONFIGURATION"
      description: "Update configuration yaml contents for Prometheus."
      commandType: "inline"
@@ -40,6 +44,10 @@ commands:
      description: "Get configuration yaml contents for AlertManager."
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_alt_config_get.sh"
+   - name: "TEST ALERT MANAGER CONFIGURATION"
+     description: "Test configuration yaml contents for AlertManager."
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_alt_config_test.sh"
    - name: "UPDATE ALERT MANAGER CONFIGURATION"
      description: "Update configuration yaml contents for AlertManager."
      commandType: "inline"
@@ -104,6 +112,15 @@ tasks:
        - name: "GET P8S CONFIGURATION"
          commandType: "inline"
          recover: false
+   - name: "TEST P8S CONFIGURATION"
+     description: "Test P8S configuration yaml contents."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "TEST P8S CONFIGURATION"
+         commandType: "inline"
+         recover: false
    - name: "UPDATE P8S CONFIGURATION"
      description: "Update P8S configuration yaml contents."
      parameter: "{}"
@@ -120,6 +137,15 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "GET ALERT MANAGER CONFIGURATION"
+         commandType: "inline"
+         recover: false
+   - name: "TEST ALERT MANAGER CONFIGURATION"
+     description: "Test ALERT MANAGER configuration yaml contents."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "TEST ALERT MANAGER CONFIGURATION"
          commandType: "inline"
          recover: false
    - name: "UPDATE ALERT MANAGER CONFIGURATION"
