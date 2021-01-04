@@ -18,7 +18,7 @@ commands:
          valueType: "TEXT"
        - name: "Default K8S namespace"
          paramKey: "tobs_yaml"
-         paramValue: "https://raw.githubusercontent.com/NexClipper/tobs/master/chart/values.yaml"
+         paramValue: "https://raw.githubusercontent.com/timescale/tobs/master/chart/values.yaml"
          valueType: "TEXT"
    - name: "GET K8S STATUS"
      description: "It monitors K8S to get status information."
