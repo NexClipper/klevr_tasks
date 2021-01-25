@@ -56,6 +56,10 @@ commands:
      description: "Expose grafana service by node port"
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_expose.sh"
+   - name: "PROMETHEUS SERVICE EXPOSE"
+     description: "Expose P8s sub service by params"
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_webstork.sh"
    - name: "STOP TASK"
      description: "Stop other running task using targetTaskID as parameter.\nEven if the request to stop a running task is successful, the task may be completed before stopping."
      commandType: "reserved"
@@ -165,7 +169,16 @@ tasks:
      commands:
        - name: "GRAFANA SERVICE NODE PORT EXPOSE"
          commandType: "inline"
-         recover: false         
+         recover: false
+   - name: "PROMETHEUS SERVICE EXPOSE"
+     description: "Expose P8s sub service by params"
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "PROMETHEUS SERVICE EXPOSE"
+         commandType: "inline"
+         recover: false
    - name: "FORCE SHUTDOWN AGENT"
      description: "Ignore the ongoing task and stop the agent immediately."
      parameter: "{}"
