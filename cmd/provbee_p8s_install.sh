@@ -18,7 +18,7 @@ ssh provbee-service "echo $TOBSYAML > /tmp/$provbeetmp.base64"
 ssh provbee-service busybee tobs install $PROVNS $provbeetmp
 ssh provbee-service busybee tobs instpw $PROVNS $GRAFANA_PW
 p8sinstchk=`ssh provbee-service busybee tobs install_chk`
-
+grafanapw=`ssh provbee-service busybee tobs passwd $PROVNS`
 cat /tmp/$provbeetmp.base64 >> /tmp/klevr_debug
 echo "\n\n" >> /tmp/klevr_debug
 
