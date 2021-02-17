@@ -18,7 +18,7 @@ commands:
          valueType: "TEXT"
        - name: "Default K8S namespace"
          paramKey: "tobs_yaml"
-         paramValue: "https://raw.githubusercontent.com/timescale/tobs/master/chart/values.yaml"
+         paramValue: "https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_values.yaml"
          valueType: "TEXT"
    - name: "GET K8S STATUS"
      description: "It monitors K8S to get status information."
@@ -91,7 +91,7 @@ tasks:
          recover: false
    - name: "INSTALL P8S STACK"
      description: "Install P8S stack on the zone."
-     parameter: "{\"tobs_yaml\":\"https://raw.githubusercontent.com/timescale/tobs/master/chart/values.yaml\"}"
+     parameter: "{\"tobs_yaml\":\"https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_values.yaml\"}"
      taskType: "atOnce"
      taskTypeChangeable: false
      commands:
