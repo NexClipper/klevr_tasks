@@ -6,8 +6,7 @@ GETCMD=$(echo ${JSON_TASK_PARAMS} | jq -r '.grafana_cmd')
 GETPW=$(echo ${JSON_TASK_PARAMS} | jq -r '.grafana_credential')
 
 ##### RUN
-#GETCMD : install instpw passwd ...etc.
-#ssh provbee-service busybee tobs instpw $PROVNS $GETPW
+#grafana_svc=`ssh provbee-service busybee tobs $GETCMD $PROVNS $GETPW`
 grafana_svc=`ssh provbee-service busybee tobs passwd $PROVNS $GETPW`
 
 ## RESULT 
