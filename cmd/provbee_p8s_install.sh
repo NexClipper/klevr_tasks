@@ -14,6 +14,8 @@ echo "GRAFANA_PW=${GRAFANA_PW}\n\n\n" >> /tmp/klevr_debug
 provbeetmp="NexClipper.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | sed 1q)"
 echo "provbeetmp=${provbeetmp}\n\n" >> /tmp/klevr_debug
 
+
+################### OLD
 ssh provbee-service "echo $TOBSYAML > /tmp/$provbeetmp.base64"
 ssh provbee-service busybee tobs install $PROVNS $provbeetmp
 ssh provbee-service busybee tobs instpw $PROVNS $GRAFANA_PW
@@ -25,3 +27,8 @@ echo "\n\n" >> /tmp/klevr_debug
 TASK_RESULT=$(echo "{}" | jq '. += {"P8S_INSTALL": "'"$p8sinstchk"'"}')
 
 echo TASK_RESULT=${TASK_RESULT} >> /tmp/klevr_debug
+
+################## NEW
+#ssh provbee-service "echo $TOBSYAML > /tmp/$provbeetmp.base64"
+#tobs_svc=$(ssh provbee-service busybee tobs install $PROVNS $provbeetmp)
+#TASK_RESULT=$(echo "$tobs_svc")
