@@ -20,6 +20,23 @@ commands:
          paramKey: "tobs_yaml"
          paramValue: "https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_values.yaml"
          valueType: "TEXT"
+   - name: "INSTALL GLOBAL P8S"
+     description: "Install GLOBAL P8S on the zone."
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install.sh"
+     params:
+       - name: "Provbee HOST"
+         paramKey: "provbee_svc"
+         paramValue: "provbee-service"
+         valueType: "TEXT"
+       - name: "Default K8S namespace"
+         paramKey: "default_namespace"
+         paramValue: "nexclipper"
+         valueType: "TEXT"
+       - name: "Default GLOBAL P8S"
+         paramKey: "tobs_yaml"
+         paramValue: "https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_global_values.yaml"
+         valueType: "TEXT"
    - name: "GET K8S STATUS"
      description: "It monitors K8S to get status information."
      commandType: "inline"
@@ -96,6 +113,15 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "INSTALL P8S"
+         commandType: "inline"
+         recover: false
+   - name: "INSTALL GLOBAL P8S STACK"
+     description: "Install P8S stack on the zone."
+     parameter: "{\"tobs_yaml\":\"https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_global_values.yaml\"}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "INSTALL GLOBAL P8S"
          commandType: "inline"
          recover: false
    - name: "MONITOR CLUSTER STATUS"
