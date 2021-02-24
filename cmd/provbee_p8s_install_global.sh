@@ -19,4 +19,7 @@ echo "provbeetmp=${provbeetmp}\n\n" >> /tmp/klevr_debug
 
 ssh provbee-service "echo $TOBSYAML > /tmp/$provbeetmp.base64"
 tobs_svc=$(ssh provbee-service busybee tobs install $PROVNS $provbeetmp)
+
+
+##### INFO
 TASK_RESULT=$(echo "$tobs_svc")
