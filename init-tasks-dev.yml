@@ -6,7 +6,7 @@ commands:
    - name: "INSTALL P8S"
      description: "Install P8S on the zone."
      commandType: "inline"
-     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install.sh"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install_global.sh"
      params:
        - name: "Provbee HOST"
          paramKey: "provbee_svc"
@@ -23,7 +23,7 @@ commands:
    - name: "INSTALL GLOBAL P8S"
      description: "Install GLOBAL P8S on the zone."
      commandType: "inline"
-     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install.sh"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install_global.sh"
      params:
        - name: "Provbee HOST"
          paramKey: "provbee_svc"
