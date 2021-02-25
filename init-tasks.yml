@@ -37,6 +37,10 @@ commands:
          paramKey: "tobs_yaml"
          paramValue: "https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_global_values.yaml"
          valueType: "TEXT"
+   - name: "GRAFANA EDIT"
+     description: "grafana configuration edit."
+     commandType: "inline"
+     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_edit.sh"
    - name: "GET K8S STATUS"
      description: "It monitors K8S to get status information."
      commandType: "inline"
@@ -116,12 +120,21 @@ tasks:
          commandType: "inline"
          recover: false
    - name: "INSTALL GLOBAL P8S STACK"
-     description: "Install P8S stack on the zone."
+     description: "Install Global P8S stack on the zone."
      parameter: "{\"tobs_yaml\":\"https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_global_values.yaml\"}"
      taskType: "atOnce"
      taskTypeChangeable: false
      commands:
        - name: "INSTALL GLOBAL P8S"
+         commandType: "inline"
+         recover: false
+   - name: "GRAFANA EDIT"
+     description: "grafana configuration edit."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "GRAFANA EDIT"
          commandType: "inline"
          recover: false
    - name: "MONITOR CLUSTER STATUS"
@@ -204,7 +217,7 @@ tasks:
      commands:
        - name: "PROMETHEUS SERVICE EXPOSE"
          commandType: "inline"
-         recover: false 
+         recover: false
    - name: "FORCE SHUTDOWN AGENT"
      description: "Ignore the ongoing task and stop the agent immediately."
      parameter: "{}"
