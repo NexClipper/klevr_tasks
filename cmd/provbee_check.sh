@@ -9,7 +9,7 @@ do
         echo "count : $ruzzz -> Status : $sshrun"
         sshrun=$($RUNCMD busybee beestatus hello)
         sleep 3
-        if [ $ruzzz == "99" ]; then echo "failed. Time Out. restart plz.";exit 1; fi
+        if [ $ruzzz == "19" ]; then echo "failed. Time Out. restart plz.";exit 1; fi
 done
 echo "Done!"
 }
