@@ -6,7 +6,7 @@ commands:
    - name: "INSTALL P8S"
      description: "Install P8S on the zone."
      commandType: "inline"
-     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install_global.sh"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install.sh"
      params:
        - name: "Provbee HOST"
          paramKey: "provbee_svc"
@@ -23,7 +23,7 @@ commands:
    - name: "INSTALL GLOBAL P8S"
      description: "Install GLOBAL P8S on the zone."
      commandType: "inline"
-     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install_global.sh"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_install.sh"
      params:
        - name: "Provbee HOST"
          paramKey: "provbee_svc"
@@ -99,7 +99,10 @@ commands:
      description: "When all ongoing AtOnce tasks are finished, the agent is terminated.\nTasks other than AtOnce are forcibly terminated."
      commandType: "reserved"
      command: "GracefulShutdownAgent"
-            
+   - name: "CHECK PROVBEE"
+     description: "provbee check"
+     commandType: "inline"
+     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_check.sh"            
 tasks:
    - name: "INIT ZONES"
      description: "Initialize the zone of when the primary agent is activated, if the zone has not yet been initialized."
@@ -116,6 +119,9 @@ tasks:
      taskType: "atOnce"
      taskTypeChangeable: false
      commands:
+       - name: "CHECK PROVBEE"
+         commandType: "inline"
+         recover: false     
        - name: "INSTALL P8S"
          commandType: "inline"
          recover: false
@@ -125,6 +131,9 @@ tasks:
      taskType: "atOnce"
      taskTypeChangeable: false
      commands:
+       - name: "CHECK PROVBEE"
+         commandType: "inline"
+         recover: false
        - name: "INSTALL GLOBAL P8S"
          commandType: "inline"
          recover: false
