@@ -2,16 +2,27 @@
 RUNCMD="ssh provbee-service"
 #RUNCMD="kubectl exec -it -n nexclipper provbee --"
 runok(){
-sshrun=$($RUNCMD busybee beestatus hello)
-while [[ $sshrun == "hi" ]];
+
+while :
 do
         ruzzz=$((ruzzz+1))
-        echo "count : $ruzzz -> Status : $sshrun"
-        sshrun=$($RUNCMD busybee beestatus hello)
-        sleep 3
-        if [ $ruzzz == "19" ]; then echo "failed. Time Out. restart plz.";exit 1; fi
+
+	sshrun=$($RUNCMD busybee beestatus hello)
+	echo "count : $ruzzz -> Status : $sshrun"
+
+	if [ "$sshrun" == "hi" ]; then
+        	echo "success"
+		break
+	fi
+
+	if [ $ruzzz == "19" ]; then
+		echo "failed. Time Out. restart plz.";exit 1;
+	fi
+
+	sleep 3
 done
 echo "Done!"
+
 }
 runok
 echo "Next Step!!!!!!"
