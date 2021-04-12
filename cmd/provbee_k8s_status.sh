@@ -4,7 +4,7 @@ PROVNS=$(echo ${JSON_TASK_PARAMS} | jq -r '.p8s_namespace')
 GETJOB=$(echo ${JSON_TASK_PARAMS} | jq -r '.provbee_job')
 
 #TEST
-if [[ $GETJOB == "" ]]; then GETJOB="k8s"; fi
+if [ "$GETJOB" = "" ]; then GETJOB="k8s"; fi
 ##### RUN
 #k8s_status=`ssh provbee-service busybee k8s wow $PROVNS` 
 k8s_status=`ssh provbee-service busybee $GETJOB wow $PROVNS` 
