@@ -1,5 +1,6 @@
 #!/bin/bash
 RUNCMD="ssh provbee-service"
+echo "Provbee Live TEST START!!!!!!!!"
 sshrun=$($RUNCMD busybee beestatus hello)
 runok(){
 
