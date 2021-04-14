@@ -115,7 +115,7 @@ tasks:
          recover: false
    - name: "INSTALL P8S STACK"
      description: "Install P8S stack on the zone."
-     parameter: "{\"tobs_yaml\":\"https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_values.yaml\"}"
+     parameter: "{\"tobs_yaml\":\"https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_values_dev.yaml\"}"
      taskType: "atOnce"
      taskTypeChangeable: false
      commands:
