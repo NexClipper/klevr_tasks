@@ -18,7 +18,7 @@ commands:
          valueType: "TEXT"
        - name: "Default K8S namespace"
          paramKey: "tobs_yaml"
-         paramValue: "https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_values.yaml"
+         paramValue: "https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_values_dev.yaml"
          valueType: "TEXT"
    - name: "INSTALL GLOBAL P8S"
      description: "Install GLOBAL P8S on the zone."
