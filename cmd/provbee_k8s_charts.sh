@@ -1,6 +1,6 @@
 JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
 ####################################################################
-GET_NS=$(echo ${JSON_TASK_PARAMS} | jq -r '.p8s_namespace')
+GET_NS=$(echo ${JSON_TASK_PARAMS} | jq -r '.charts_namespace')
 GET_CMD=$(echo ${JSON_TASK_PARAMS} | jq -r '.charts_cmd')
 GET_APP=$(echo ${JSON_TASK_PARAMS} | jq -r '.charts_app')
 GET_YAML=$(echo ${JSON_TASK_PARAMS} | jq '.charts_yaml')
