@@ -5,8 +5,8 @@ GET_CMD=$(echo ${JSON_TASK_PARAMS} | jq -r '.charts_cmd')
 GET_APP=$(echo ${JSON_TASK_PARAMS} | jq -r '.charts_app')
 GET_YAML=$(echo ${JSON_TASK_PARAMS} | jq -r '.charts_yaml')
 GET_TYPE=$(echo ${JSON_TASK_PARAMS} | jq -r '.charts_svc_type')
-if [ "$GET_YAML" = "" ]; then GET_YAML="" ; fi
-if [ "$GET_TYPE" = "" ]; then GET_TYPE="" ; fi
+if [ "$GET_YAML" = "null" ]; then GET_YAML="" ; fi
+if [ "$GET_TYPE" = "null" ]; then GET_TYPE="" ; fi
 
 #helm test
 ##### RUN
