@@ -41,6 +41,10 @@ commands:
      description: "grafana configuration edit."
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_edit.sh"
+   - name: "GET PROVIDER"
+     description: "get csp infomation."
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_whoisip.sh"
    - name: "GET K8S STATUS"
      description: "It monitors K8S to get status information."
      commandType: "inline"
@@ -144,6 +148,15 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "GRAFANA EDIT"
+         commandType: "inline"
+         recover: false
+   - name: "GET PROVIDER"
+     description: "get csp infomation."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "GET PROVIDER"
          commandType: "inline"
          recover: false
    - name: "MONITOR CLUSTER STATUS"
