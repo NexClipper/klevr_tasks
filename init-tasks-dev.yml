@@ -37,6 +37,10 @@ commands:
          paramKey: "tobs_yaml"
          paramValue: "https://raw.githubusercontent.com/NexClipper/helm-charts/main/tobs/nexclipper_global_values.yaml"
          valueType: "TEXT"
+   - name: "INSTALL K8S CHARTS"
+     description: "Install K8S by charts on the zone."
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_k8s_charts.sh"
    - name: "GRAFANA EDIT"
      description: "grafana configuration edit."
      commandType: "inline"
@@ -77,10 +81,6 @@ commands:
      description: "Update configuration yaml contents for AlertManager."
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_p8s_config.sh"
-   - name: "GRAFANA SERVICE NODE PORT EXPOSE"
-     description: "Expose grafana service by node port"
-     commandType: "inline"
-     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_expose.sh"
    - name: "PROMETHEUS SERVICE EXPOSE"
      description: "Expose P8s sub service by params"
      commandType: "inline"
@@ -139,6 +139,18 @@ tasks:
          commandType: "inline"
          recover: false
        - name: "INSTALL GLOBAL P8S"
+         commandType: "inline"
+         recover: false
+   - name: "INSTALL K8S CHARTS"
+     description: "Install K8S exporter by charts on the zone."
+     parameter: "{\"chart_url\":\"https://raw.githubusercontent.com/NexClipper/exporterhub.io/main/contents/{EXPORTER_NAME}/helm-chart/values.yaml\"}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "CHECK PROVBEE"
+         commandType: "inline"
+         recover: false
+       - name: "INSTALL K8S CHARTS"
          commandType: "inline"
          recover: false
    - name: "GRAFANA EDIT"
@@ -220,15 +232,6 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "UPDATE ALERT MANAGER CONFIGURATION"
-         commandType: "inline"
-         recover: false
-   - name: "GRAFANA SERVICE NODE PORT EXPOSE"
-     description: "Expose grafana service by node port."
-     parameter: "{}"
-     taskType: "atOnce"
-     taskTypeChangeable: false
-     commands:
-       - name: "GRAFANA SERVICE NODE PORT EXPOSE"
          commandType: "inline"
          recover: false
    - name: "PROMETHEUS SERVICE EXPOSE"
