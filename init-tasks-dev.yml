@@ -41,6 +41,14 @@ commands:
      description: "Install K8S by charts on the zone."
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_k8s_charts.sh"
+   - name: "ADD EXPORTER LABELS"
+     description: "add exporter labels by klevr."
+     commandType: "reserved"
+     command: "AddExporterLabel"
+   - name: "GET EXPORTER LABELS"
+     description: "get exporter labels by klevr."
+     commandType: "reserved"
+     command: "MonitorExportersLabel"
    - name: "GRAFANA EDIT"
      description: "grafana configuration edit."
      commandType: "inline"
@@ -152,6 +160,24 @@ tasks:
          recover: false
        - name: "INSTALL K8S CHARTS"
          commandType: "inline"
+         recover: false
+   - name: "ADD EXPORTER LABELS"
+     description: "add K8S exporter labels by klevr"
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "ADD EXPORTER LABELS"
+         commandType: "reserved"
+         recover: false
+   - name: "MONITOR EXPORTER LABELS"
+     description: "It monitors exporter labels periodically to get exporter label information."
+     parameter: "{}"
+     taskType: "iteration"
+     taskTypeChangeable: true
+     commands:
+       - name: "GET EXPORTER LABELS"
+         commandType: "reserved"
          recover: false
    - name: "GRAFANA EDIT"
      description: "grafana configuration edit."
