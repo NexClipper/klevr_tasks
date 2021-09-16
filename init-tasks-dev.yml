@@ -93,6 +93,10 @@ commands:
      description: "Expose P8s sub service by params"
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_webstork.sh"
+   - name: "MONITOR BY METRICARK"
+     description: "Get monitoring data by metricark"
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_metricark.sh"
    - name: "STOP TASK"
      description: "Stop other running task using targetTaskID as parameter.\nEven if the request to stop a running task is successful, the task may be completed before stopping."
      commandType: "reserved"
@@ -178,6 +182,15 @@ tasks:
      commands:
        - name: "GET EXPORTER LABELS"
          commandType: "reserved"
+         recover: false
+   - name: "MONITOR BY METRICARK"
+     description: "Get monitoring data by metricark"
+     parameter: "{\"metricark_cmd\": \"metricark\"}"
+     taskType: "iteration"
+     taskTypeChangeable: false
+     commands:
+       - name: "MONITOR BY METRICARK"
+         commandType: "inline"
          recover: false
    - name: "GRAFANA EDIT"
      description: "grafana configuration edit."
