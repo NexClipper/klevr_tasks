@@ -118,7 +118,11 @@ commands:
    - name: "CHECK PROVBEE"
      description: "provbee check"
      commandType: "inline"
-     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_check.sh"            
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_check.sh"   
+   - name: "METRICARK PROMQL"
+     description: "Call metricark for PromQL excution through busybee of provbee"
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_metricark_promql.sh"
 tasks:
    - name: "INIT ZONES"
      description: "Initialize the zone of when the primary agent is activated, if the zone has not yet been initialized."
@@ -290,4 +294,13 @@ tasks:
      commands:
        - name: "FORCE SHUTDOWN AGENT"
          commandType: "reserved"
+         recover: false
+   - name: "GET METRICARK P8S QUERY"
+     description: "Initialize the zone of when the primary agent is activated, if the zone has not yet been initialized."
+     parameter: "{\"metricark_cmd\":\"metricark_promql\"}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "METRICARK PROMQL"
+         commandType: "inline"
          recover: false
