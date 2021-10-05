@@ -53,6 +53,10 @@ commands:
      description: "grafana configuration edit."
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_edit.sh"
+   - name: "GRAFANA SET CONFIG"
+     description: "grafana configuration set."
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_set.sh"
    - name: "GET PROVIDER"
      description: "get csp infomation."
      commandType: "inline"
@@ -203,6 +207,15 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "GRAFANA EDIT"
+         commandType: "inline"
+         recover: false
+   - name: "GRAFANA SET CONFIG"
+     description: "grafana configuration set."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "GRAFANA SET CONFIG"
          commandType: "inline"
          recover: false
    - name: "GET PROVIDER"
