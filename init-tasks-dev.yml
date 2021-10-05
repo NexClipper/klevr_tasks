@@ -57,6 +57,10 @@ commands:
      description: "grafana configuration set."
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_set.sh"
+   - name: "GRAFANA GET AUTH"
+     description: "grafana get auth key."
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_gf_auth.sh"
    - name: "GET PROVIDER"
      description: "get csp infomation."
      commandType: "inline"
@@ -216,6 +220,15 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "GRAFANA SET CONFIG"
+         commandType: "inline"
+         recover: false
+   - name: "GRAFANA GET AUTH"
+     description: "grafana get auth key."
+     parameter: "{}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "GRAFANA GET AUTH"
          commandType: "inline"
          recover: false
    - name: "GET PROVIDER"
