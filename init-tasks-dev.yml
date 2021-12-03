@@ -135,6 +135,10 @@ commands:
      description: "Call metricark for PromQL excution through busybee of provbee"
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_metricark_promql.sh"
+   - name: "METRICARK API"
+     description: "Call metricark for API excution through busybee of provbee"
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_metricark_api.sh"
 tasks:
    - name: "INIT ZONES"
      description: "Initialize the zone of when the primary agent is activated, if the zone has not yet been initialized."
@@ -341,5 +345,14 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "METRICARK PROMQL"
+         commandType: "inline"
+         recover: false
+   - name: "GET METRICARK API"
+     description: "Call metricark api."
+     parameter: "{\"metricark_cmd\":\"metricark_api\"}"
+     taskType: "atOnce"
+     taskTypeChangeable: false
+     commands:
+       - name: "METRICARK API"
          commandType: "inline"
          recover: false
