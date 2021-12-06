@@ -3,7 +3,6 @@ JSON_TASK_PARAMS=${TASK_ORIGIN_PARAM}
 GET_CMD=$(echo ${JSON_TASK_PARAMS} | jq -r '.metricark_cmd')
 GET_API=$(echo ${JSON_TASK_PARAMS} | jq -r '.metricark_api')
 GET_PARAMS=$(echo ${JSON_TASK_PARAMS} | jq -r '.metricark_params')
-#GET_ENDPOINT=$(echo ${JSON_TASK_PARAMS} | jq -r '.metricark_endpoint')
 
 
 #TEST
