@@ -218,7 +218,7 @@ tasks:
          recover: false
    - name: "GET OPENSTACK NODES BY METRICARK"
      description: "Get openstack nodes info data by metricark"
-     parameter: "{}"
+     parameter: "{\"metricark_cmd\":\"metricark_openstack_nodes\"}"
      taskType: "iteration"
      taskTypeChangeable: false
      commands:
