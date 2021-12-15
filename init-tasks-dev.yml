@@ -113,6 +113,10 @@ commands:
      description: "Get openstack nodes info data by metricark"
      commandType: "inline"
      command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_metricark_openstack.sh"
+   - name: "GET OPENSTACK PROJECTS BY METRICARK"
+     description: "Get openstack projects info data by metricark"
+     commandType: "inline"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/cmd/provbee_metricark_api.sh"
    - name: "STOP TASK"
      description: "Stop other running task using targetTaskID as parameter.\nEven if the request to stop a running task is successful, the task may be completed before stopping."
      commandType: "reserved"
@@ -161,7 +165,7 @@ tasks:
      commands:
        - name: "CHECK PROVBEE"
          commandType: "inline"
-         recover: false     
+         recover: false
        - name: "INSTALL P8S"
          commandType: "inline"
          recover: false
@@ -223,6 +227,15 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "GET OPENSTACK NODES BY METRICARK"
+         commandType: "inline"
+         recover: false
+   - name: "GET OPENSTACK PROJECTS BY METRICARK"
+     description: "Get openstack nodes info data by metricark"
+     parameter: "{}"
+     taskType: "iteration"
+     taskTypeChangeable: false
+     commands:
+       - name: "GET OPENSTACK PROJECTS BY METRICARK"
          commandType: "inline"
          recover: false
    - name: "GRAFANA EDIT"
