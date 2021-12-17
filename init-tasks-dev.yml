@@ -229,6 +229,15 @@ tasks:
        - name: "GET OPENSTACK NODES BY METRICARK"
          commandType: "inline"
          recover: false
+   - name: "GET OPENSTACK NODES BY METRICARK PROMQL"
+     description: "Get openstack nodes info data by metricark promql."
+     parameter: "{\"metricark_cmd\":\"metricark_api\"}"
+     taskType: "iteration"
+     taskTypeChangeable: false
+     commands:
+       - name: "METRICARK API"
+         commandType: "inline"
+         recover: false
    - name: "GET OPENSTACK PROJECTS BY METRICARK"
      description: "Get openstack nodes info data by metricark"
      parameter: "{}"
@@ -236,6 +245,15 @@ tasks:
      taskTypeChangeable: false
      commands:
        - name: "GET OPENSTACK PROJECTS BY METRICARK"
+         commandType: "inline"
+         recover: false
+   - name: "GET OPENSTACK PROJECTS BY METRICARK PROMQL"
+     description: "Get openstack nodes info data by metricark promql."
+     parameter: "{\"metricark_cmd\":\"metricark_api\"}"
+     taskType: "iteration"
+     taskTypeChangeable: false
+     commands:
+       - name: "METRICARK API"
          commandType: "inline"
          recover: false
    - name: "GRAFANA EDIT"
