@@ -2,7 +2,7 @@ commands:
    - name: "INIT ZONES"
      description: "Initialize the zone."
      commandType: "inline"
-     command: "http://raw.githubusercontent.com/NexClipper/klevr_tasks/master/zzz"
+     command: "https://raw.githubusercontent.com/NexClipper/klevr_tasks/master/zzz"
    - name: "UPDATE BUSYBEE"
      description: "Initialize the zone."
      commandType: "inline"
